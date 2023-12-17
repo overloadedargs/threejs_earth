@@ -13,7 +13,7 @@ const renderer = new THREE.WebGLRenderer({
 
 const loader = new THREE.TextureLoader();
 
-loader.load('./public/images/bg.jpg' , function(texture) {
+loader.load('/images/bg.jpg' , function(texture) {
     scene.background = texture;  
 });
 
@@ -22,14 +22,14 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 
 const geometry = new THREE.SphereGeometry(6);
-const texture = new THREE.TextureLoader().load('./public/images/earth.png');
+const texture = new THREE.TextureLoader().load('/images/earth.png');
 
 const material = new THREE.MeshBasicMaterial({ map: texture, wireframe: false });
 const shape = new THREE.Mesh(geometry, material);
 shape.position.set(0, 4, 4);
 scene.background = new THREE.Color( 0xffffff );
 
-const texture2 = new THREE.TextureLoader().load('./public/images/sun.png');
+const texture2 = new THREE.TextureLoader().load('/images/sun.png');
 
 const sphere_geometry = new THREE.SphereGeometry(10, 10, 10);
 var material2 = new THREE.MeshLambertMaterial({map: texture2, wireframe: true });
